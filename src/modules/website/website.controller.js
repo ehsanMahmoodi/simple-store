@@ -12,5 +12,8 @@ class WebsiteController {
       next(error);
     }
   }
+  async renderAboutUsPage(req,res,next){
+      res.render('./pages/website/about-us')
+  }
 }
 module.exports = new WebsiteController();
