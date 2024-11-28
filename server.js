@@ -5,6 +5,7 @@ const { PageNotFoundHandler } = require("./src/common/exceptions/not-found");
 const { swaggerConfig } = require("./src/configs/swagger.config");
 const { MainRouter } = require("./src/main.routes");
 const expressEjsLayouts = require("express-ejs-layouts");
+const cookieParser = require('cookie-parser')
 const main = () => {
   // initial app
   const app = express();
@@ -19,6 +20,7 @@ const main = () => {
   app.set("layout", "./layouts/website/main.ejs");
   app.set("layout extractScripts", true);
   app.set("layout extractStyles", true);
+  app.use(cookieParser())
   // router
   app.use(MainRouter)
   // error hander
