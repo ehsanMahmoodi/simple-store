@@ -19,7 +19,15 @@ class AuthService {
     const token = this.signAccessToken({ userId: newUser._id });
     return token;
   }
-  async signAccessToken(payload) {
+  async login(registerDto) {
+    const user = await this.#model.findOne({ email: registerDto.email });
+    if (!user) throw new createHttpError.BadRequest(AuthMessages.NotFound);
+    if (!verifyPassword(registerDto.password, user.password))
+      throw new createHttpError.BadRequest(AuthMessages.LoginError);
+    const token = this.signAccessToken({ userId: user._id });
+    return token;
+  }
+  signAccessToken(payload) {
     return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET_KEY);
   }
 }

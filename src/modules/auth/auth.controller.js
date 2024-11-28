@@ -25,6 +25,26 @@ class AuthController {
         password: hashPassword(password),
       });
       res
+        .status(httpCodes.CREATED)
+        .cookie("access_token", token, {
+          expires: new Date("March28,2025 18:23:00"),
+        })
+        .redirect("/");
+    } catch (error) {
+      next(error);
+    }
+  }
+  async renderLoginPage(req, res, next) {
+    res.locals.layout = "./layouts/auth/main.ejs";
+    res.render("./pages/auth/login.ejs");
+  }
+  async login(req, res, next) {
+    try {
+      const {
+        body: { email, password },
+      } = req;
+      const token = await this.#service.login({ email, password });
+      res
         .status(httpCodes.OK)
         .cookie("access_token", token, {
           expires: new Date("March28,2025 18:23:00"),
