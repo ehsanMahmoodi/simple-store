@@ -5,6 +5,8 @@ const { PageNotFoundHandler } = require("./src/common/exceptions/not-found");
 const main = () => {
   // initial app
   const app = express();
+  // config's
+  require('./src/configs/mongoose.config')
   // error hander
   ErrorHandler(app);
   PageNotFoundHandler(app);
