@@ -1,0 +1,52 @@
+<div
+  class="page-banner-area bg-black bg-img"
+  data-background="/assets/images/banner-bg-shape.png"
+>
+  <div class="container mw-1680">
+    <div class="page-banner-content">
+      <h2>محصولات</h2>
+      <ul
+        class="ps-0 mb-0 list-unstyled justify-content-center page-breadcrumb d-flex flex-wrap gap-4"
+      >
+        <li><a href="/">صفحه اصلی</a></li>
+        <li><span class="active">محصولات</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="products-area ptb-100">
+  <div class="container">
+    <div class="row justify-content-center" id="Container">
+      <%productList.map((productItem)=>{%>
+      <div class="col-lg-3 col-sm-6 mix monitor monitor mobile">
+        <div class="product-single-item">
+          <div class="product-img">
+            <a href="/products" class="d-block"
+              ><img src="<%=productItem.image%>" alt="product"
+            /></a>
+            <ul class="ps-0 mb-0 list-unstyled social-link">
+              <li>
+                <a href="/products"><i class="fa-regular fa-heart"></i></a>
+              </li>
+              <li>
+                <a href="/products"><i class="fa-regular fa-eye"></i></a>
+              </li>
+              <li>
+                <a href="/products"
+                  ><i class="fa-sharp fa-solid fa-arrows-rotate"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <h3 style="text-align: center">
+            <a href="/products"> <%=productItem.title%> </a>
+          </h3>
+          <div style="display: flex; justify-content: space-around">
+            <span> <%=productItem.price%> </span>
+          </div>
+        </div>
+      </div>
+      <%})%>
+    </div>
+  </div>
+</div>

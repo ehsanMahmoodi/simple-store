@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "title": "air-pods",
+    "price": 2500,
+    "image": "/assets/images/product-1.jpg"
+  },
+  {
+    "id": 0,
+    "title": "کابل otg",
+    "price": 2500,
+    "image": "/assets/images/product-2.jpg"
+  },
+  {
+    "id": 0,
+    "title": "گلس",
+    "price": 2500,
+    "image": "/assets/images/product-3.jpg"
+  },
+  {
+    "id": 0,
+    "title": "موس",
+    "price": 2500,
+    "image": "/assets/images/product-4.jpg"
+  },
+  {
+    "id": 0,
+    "title": "نمایشگر",
+    "price": 2500,
+    "image": "/assets/images/product-5.jpg"
+  },
+  {
+    "id": 0,
+    "title": "لپتاپ",
+    "price": 2500,
+    "image": "/assets/images/product-6.jpg"
+  },
+  {
+    "id": 0,
+    "title": "مودم",
+    "price": 2500,
+    "image": "/assets/images/product-7.jpg"
+  },
+  {
+    "id": 0,
+    "title": "روتر",
+    "price": 2500,
+    "image": "/assets/images/product-8.jpg"
+  },
+  {
+    "id": 0,
+    "title": "پنکه",
+    "price": 2500,
+    "image": "/assets/images/product-9.jpg"
+  },
+  {
+    "id": 0,
+    "title": "ساعت",
+    "price": 2500,
+    "image": "/assets/images/product-10.jpg"
+  },
+  {
+    "id": 0,
+    "title": "پاور بانک",
+    "price": 2500,
+    "image": "/assets/images/product-11.jpg"
+  },
+  {
+    "id": 0,
+    "title": "فلش",
+    "price": 2500,
+    "image": "/assets/images/product-12.jpg"
+  }
+]
