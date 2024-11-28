@@ -17,7 +17,10 @@ const swaggerConfig = (app) => {
         },
       ],
       tags: [
-        
+        {
+          name:'Auth',
+          description:"auth modules and services"
+        }
       ],
       components: {
         securitySchemes: {
@@ -34,7 +37,7 @@ const swaggerConfig = (app) => {
         },
       ],
     },
-    apis: [process.cwd() + "/src/modules/**/*.swagger.js"],
+    apis: [process.cwd() + "/src/**/*.swagger.js"],
   });
   const swagger = swaggerUi.setup(swaggerDocument, {
     swaggerOptions: {
