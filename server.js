@@ -3,12 +3,24 @@ const express = require("express");
 const { ErrorHandler } = require("./src/common/exceptions/error-handler");
 const { PageNotFoundHandler } = require("./src/common/exceptions/not-found");
 const { swaggerConfig } = require("./src/configs/swagger.config");
+const { MainRouter } = require("./src/main.routes");
+const expressEjsLayouts = require("express-ejs-layouts");
 const main = () => {
   // initial app
   const app = express();
   // config's
+  app.use(express.json());
+  app.use(express.urlencoded({extended: true}));
   require('./src/configs/mongoose.config')
   swaggerConfig(app)
+  app.use(express.static("public"));
+  app.use(expressEjsLayouts);
+  app.set("view engine", "ejs");
+  app.set("layout", "./layouts/website/main.ejs");
+  app.set("layout extractScripts", true);
+  app.set("layout extractStyles", true);
+  // router
+  app.use(MainRouter)
   // error hander
   ErrorHandler(app);
   PageNotFoundHandler(app);
