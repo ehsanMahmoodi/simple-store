@@ -15,5 +15,11 @@ class WebsiteController {
   async renderAboutUsPage(req,res,next){
       res.render('./pages/website/about-us')
   }
+  async renderBlogsPage(req,res,next){
+      res.render('./pages/website/blogs')
+  }
+  async renderCasesStudyPage(req,res,next){
+      res.render('./pages/website/case-study')
+  }
 }
 module.exports = new WebsiteController();
